@@ -2,9 +2,6 @@ const cards = document.querySelectorAll(".card");
 
 const getCenter = () => (cards.length - 1) / 2;
 
-// ===============================
-// 1) Posición inicial centrada
-// ===============================
 cards.forEach((card, i) => {
   const center = getCenter();
   const offset = (i - center) * 160;
@@ -12,9 +9,6 @@ cards.forEach((card, i) => {
   card.style.setProperty("--offset-x", `${offset}px`);
 });
 
-// ===============================
-// 2) Separación horizontal solo al llegar a la sección
-// ===============================
 window.addEventListener("scroll", () => {
   const section = document.querySelector(".cards-showcase");
   const rect = section.getBoundingClientRect();
